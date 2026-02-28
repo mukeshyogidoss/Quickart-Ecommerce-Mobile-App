@@ -2,10 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const crypto = require("crypto");
-const nodeMailer = require("nodemailer");
 
 
-import transporter from "./nodemailer";
+import transporter from './nodemailer';
+
+ 
 
 require("dotenv").config();
 
