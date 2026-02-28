@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const crypto = require("crypto");
 
 
-import transporter from "./nodemailer.js";
+const transporter = require("./nodemailer");
 
  
 
