@@ -4,6 +4,7 @@ import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
+
 import { UserType } from "@/UserContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
@@ -73,7 +74,7 @@ const HomeScreen = () => {
     {
       id: "0",
       image:
-        "https://ik.imagekit.io/swxmtftfmc/J23_SEO4.jpg?updatedAt=1747670631097",
+        "https://i.ibb.co/TfXSPbj/Deals.png",
       name: "Deals",
     },
     {
@@ -109,13 +110,9 @@ const HomeScreen = () => {
   ];
 
   const swiperImages = [
-    "https://static.wixstatic.com/media/b69f5d_28d07ddeb461469b9babdf177c333684~mv2.jpg/v1/fill/w_530,h_265,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b69f5d_28d07ddeb461469b9babdf177c333684~mv2.jpg",
-
-    "https://i.gadgets360cdn.com/large/amazon_prime_day_sale_1721453189245.jpg?downsize=950:*",
-
-    "https://assets.thehansindia.com/h-upload/2022/07/23/1304417-amazon-prime-day.webp",
-
-    "https://assets.aboutamazon.com/dims4/default/ff66517/2147483647/strip/true/crop/1279x720+0+0/resize/1860x1047!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2Ff5%2F9f%2F43fe106c4a5081e7a696ef0a8fa8%2Ffresh-1280x7201.jpg",
+    require("@/assets/images/QK 1.png"),,
+    require("@/assets/images/QK 2.jpg"),,
+    require("@/assets/images/QK 3.jpg"),,
   ];
 
   const deals = [
@@ -348,9 +345,8 @@ const HomeScreen = () => {
           height: wp(14.5),
           alignSelf: "center",
           borderRadius: wp(10),
-          borderWidth: 1.9,
-          borderColor: "#ebb928",
-          // borderColor: "#d5d5d5",
+          borderWidth: wp(0.61),
+          borderColor: "#545483a1",
           resizeMode: "contain",
           padding: 10,
           // margin:10
@@ -379,7 +375,7 @@ const HomeScreen = () => {
 
   return (
     <View style={{ backgroundColor: "white", flex: 1 }}>
-      <View style={{ backgroundColor: "white", flex: 1 , marginBottom:hp(13)}}>
+      <View style={{ backgroundColor: "white", flex: 1 , marginBottom:hp(12)}}>
         <StatusBar
           translucent
           backgroundColor="transparent"
@@ -387,7 +383,10 @@ const HomeScreen = () => {
         />
         <ScrollView>
           <LinearGradient //It acts as a <View> now
-            colors={["#01575c", "#2dc0c6", "#c4fdff"]}
+          // colors={["#003B47", "#46B0C7", "#A5EBFA"]}
+          colors={["#2c2d4d", "#b4b4e5", "#ededf7"]}
+          
+
             start={{ x: 0, y: 0 }} // left
             end={{ x: 0, y: 1 }} // right
             style={{
@@ -398,19 +397,19 @@ const HomeScreen = () => {
           >
             <Image
               style={{
-                height: hp(5),
-                width: wp(33),
+                height: hp(17),
+                width: wp(60),
                 resizeMode: "contain",
                 position: "absolute",
                 alignSelf: "center",
                 zIndex: 1,
                 alignSelf: "center",
                 marginBottom: hp(1.6),
-                left: wp(34),
+                left: wp(16),
 
-                // backgroundColor:'pink'
+                // backgroundColor:'#ffff11's
               }}
-              source={require("../assets/images/Amazon Logo.png")}
+              source={require("../assets/images/Quickart Logo.png")}
             />
             {/* Now Empty Space for moving carousel with dev . name */}
             <Pressable
@@ -462,14 +461,16 @@ const HomeScreen = () => {
           </LinearGradient>
 
           {/* Location View */}
-          <Pressable
+           
+            <Pressable
             onPress={() => setModalVisible(!modalVisible)}
             style={{
               flexDirection: "row",
-              backgroundColor: "#c4fdff",
+              backgroundColor: "#ededf7",
               padding: wp(2),
-              alignItems: "center",
+              alignItems: "center",  
               gap: wp(2),
+              marginBottom : hp(1.2)
             }}
           >
             <Ionicons
@@ -511,7 +512,9 @@ const HomeScreen = () => {
                 color="black"
               />
             </View>
-          </Pressable>
+            </Pressable>
+          
+
 
           {/* Horizontal Categories Scroll */}
           <FlatList
@@ -538,7 +541,7 @@ const HomeScreen = () => {
             dotStyle={styles.inactiveDot} //Inactive Customuztion
             activeDotStyle={styles.activeDot} //Ative Dot Customiztion
           >
-            {swiperImages.map((uri, index) => (
+            {swiperImages.map((source, index) => (
               <View style={{ alignItems: "center", marginTop: 5 }} key={index}>
                 <Image
                   style={{
@@ -547,7 +550,7 @@ const HomeScreen = () => {
                     resizeMode: "cover",
                     borderRadius: wp(3),
                   }}
-                  source={{ uri }}
+                  source={source}
                 />
               </View>
             ))}
@@ -700,7 +703,8 @@ const HomeScreen = () => {
                   />
                   <View
                     style={{
-                      backgroundColor: "#cd2626",
+                      // backgroundColor: "#cd2626",
+                      backgroundColor: "#676992",
                       width: wp(32),
                       height: hp(3.5),
                       justifyContent: "center",

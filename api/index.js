@@ -46,7 +46,7 @@ const Order = require("./models/order");
 
 
 app.post("/register", async (req, res) => {
-  console.log("Request body:", req.body);
+  console.log("/register is working at index.js line no 49");
 
   try {
     const { name, email, password } = req.body;
@@ -76,12 +76,13 @@ app.post("/register", async (req, res) => {
 
 // Function to send verification email
 const sendVerificationEmail = async (email, verificationToken) => {
+  console.log("Email function is called after clicking register : ", email , verificationToken)
   // Create a NodeMailer transporter
   const transporter = nodeMailer.createTransport({
     service: "gmail",
     auth: {
       user: "mukeshcrypto60@gmail.com",
-      pass: "plgxvjynpvhralwa",
+      pass: "pexp oagd wjyx pjau",
     },
     tls: {
       rejectUnauthorized: false, // ⚠️ This disables SSL certificate checks
@@ -90,7 +91,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
 
   //Compose the email
   const mailOptions = {
-    from: "amazonclone.com",
+    from: "mukeshcrypto60@gmail.com",
     to: email,
     subject: "Email Verification",
     text: `Please verify your email by clicking on the following link: https://e-commerce-backup.onrender.com/verify/${verificationToken}`,

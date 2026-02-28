@@ -22,6 +22,7 @@ import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
+
 import { addToCart } from "@/Reducer/CartReducer";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -51,7 +52,7 @@ const ProductInfoScreen = ({ route }) => {
 
     setTimeout(()=>{
       setAddedToCart(false)
-    },60000)//  1 Mins later
+    },2000)//  1 Mins later
 
   }
 
@@ -69,7 +70,7 @@ const ProductInfoScreen = ({ route }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#ffff",
+        backgroundColor: "#fff",
       }}
     >
       <StatusBar
@@ -79,7 +80,7 @@ const ProductInfoScreen = ({ route }) => {
       />
       <ScrollView>
         <LinearGradient //Ut acts as a <View> now
-          colors={["#0daab4", "#53d7df", "#ffff"]}
+          colors={["#2c2d4d", "#a3a3d0", "#ffffff"]}
           start={{ x: 0, y: 0 }} // left
           end={{ x: 0, y: 1 }} // right
           style={{
@@ -95,26 +96,21 @@ const ProductInfoScreen = ({ route }) => {
               flexDirection: "row",
               position: "absolute",
               alignItems: "center",
-              marginTop: hp(2),
+
             }}
           >
             <Image
               style={{
-                height: hp(10),
-                width: wp(25),
+                height: hp(17),
+                width: wp(45),
+                // backgroundColor :"#ff22",
                 resizeMode: "contain",
+                bottom : hp(2),
+                right :wp(2)
               }}
-              source={require("../assets/images/Amazon Logo.png")}
+              source={require("../assets/images/Quickart Logo.png")}
             />
-            <Text
-              style={{
-                fontFamily: "poppins-bold",
-                marginLeft: wp(1),
-                marginBottom: hp(0.7),
-              }}
-            >
-              Clone
-            </Text>
+            
           </View>
 
           <View
@@ -191,7 +187,8 @@ const ProductInfoScreen = ({ route }) => {
               >
                 <View
                   style={{
-                    backgroundColor: "#b90303",
+                    // backgroundColor: "#b90303",
+                    backgroundColor: "#5d414d",
                     width: wp(10),
                     height: hp(5),
                     padding: 4,
@@ -265,8 +262,9 @@ const ProductInfoScreen = ({ route }) => {
           <Text
             style={{
               fontFamily: "amazon-regular",
-              fontSize: wp(3.3),
-              color: "#595959",
+              fontSize: wp(3.9),
+              // color: "#595959",
+              color: "#66085d",
               lineHeight: hp(2.45),
             }}
           >
@@ -278,13 +276,14 @@ const ProductInfoScreen = ({ route }) => {
             <Text
               style={{
                 fontFamily: "amazon-regular",
-                fontSize: wp(9),
+                fontSize: wp(7),
                 marginTop: hp(1.3),
-                color: "#c40202",
+                // color: "#c40202",
+                color: "#580b23",
                 marginRight: wp(1),
               }}
             >
-              -{offer?.split("off")[0]}
+              -{offer?.split("off")[0]} 
             </Text>
 
             <Text
@@ -292,6 +291,7 @@ const ProductInfoScreen = ({ route }) => {
                 fontFamily: "amazon-medium",
                 fontSize: wp(9),
                 marginTop: hp(1.3),
+                color : "#650c7b"
               }}
             >
               ₹{price.toLocaleString("en-IN")}
@@ -395,15 +395,21 @@ const ProductInfoScreen = ({ route }) => {
             Total : ₹{price.toLocaleString("en-IN")}{" "}
           </Text>
 
-          <Text
+       
+           <Text
             style={{
               fontFamily: "amazon-medium",
-              color: "#067fca",
-              marginTop: hp(1),
+              // color: "#067fca",
+              color: "#06649f",
+              marginTop: hp(3.6),
+              marginBottom : hp(1)
+              
+             
             }}
           >
             FREE delivery by tomorrow by 12 PM Order within 7hrs 27mins
           </Text>
+        
         </View>
 
         {/* Deliver to Mukesh */}
@@ -452,44 +458,77 @@ const ProductInfoScreen = ({ route }) => {
           <Pressable
             onPress={() => addItemToCart(item)}
             style={{
-              backgroundColor: addedToCart?"#d6d6d6":"#fadc03",
+              backgroundColor: addedToCart?"#d6d6d6":"#626496",
               width: wp(85),
               height: hp(5.8),
               alignItems: "center",
               justifyContent: "center",
-              borderRadius: wp(20),
+              borderTopRightRadius : wp(8),
+              borderBottomLeftRadius : wp(8),
+              // borderRadius: wp(20),
               marginBottom: hp(3),
+              flexDirection :'row'
             }} 
           >
             <Text
               style={{
-                fontFamily: "poppins-regular",
+                fontFamily: "poppins-bold",
                 fontSize: wp(3.8),
+                color:"#fff",
+                marginRight : wp(2.2)
               }}
             >
               {addedToCart?'Added to the Cart' :'Add to cart' }
             </Text>
+            <Image 
+              source={require("@/assets/images/Cart Gif.gif")}
+              style={{
+                width : wp(6.5),
+                height : hp(4),
+                resizeMode : 'contain',
+                bottom : hp(0.3),
+                right : wp(1)
+                // backgroundColor : 'red'
+              }}
+            
+            />
           </Pressable>
 
           {/* Buy Now Button */}
           <Pressable
             style={{
-              backgroundColor: "#faa703",
+              backgroundColor: "#c8ac0d",
               width: wp(85),
               height: hp(5.8),
               alignItems: "center",
               justifyContent: "center",
-              borderRadius: wp(20),
+              marginBottom  : hp(6),
+              borderTopRightRadius : wp(8),
+              borderBottomLeftRadius : wp(8),
+              flexDirection : "row"
             }}
           >
             <Text
               style={{
-                fontFamily: "poppins-regular",
+                fontFamily: "poppins-bold",
                 fontSize: wp(3.8),
+                color : '#fff',
+                
               }}
             >
               Buy Now
             </Text>
+            <Image 
+              source={require("@/assets/images/Buy Gif.gif")} 
+              style={{
+                width : wp(6.5),
+                height : hp(4),
+                resizeMode : 'contain',
+                bottom : hp(0.3),
+                left : wp(3)
+                // backgroundColor : 'red'
+              }}
+            />
           </Pressable>
         </View>
       </ScrollView>

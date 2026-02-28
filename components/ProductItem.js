@@ -106,12 +106,14 @@ const ProductItem = ({ item }) => {
         borderRadius:wp(10),
         justifyContent:'center',
         alignItems:'center',
-        backgroundColor: addedToCart?'#d6d6d6':'#ffde0a'
+        
+        // backgroundColor: addedToCart?'#d6d6d6':'#ffde0a'
+        backgroundColor: addedToCart?'#d6d6d6':'#6d6f9a'
       }}>
           <Text style={{
             fontFamily:'poppins-regular',
             fontSize:wp(3.5),
-            color:'#464646'
+            color : '#fff',
           }}>{addedToCart?'Added to Cart':'Add to Cart'} </Text>
       </Pressable>
     </Pressable>

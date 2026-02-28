@@ -71,7 +71,7 @@ const CartScreen = () => {
       />
       <ScrollView>
         <LinearGradient //Ut acts as a <View> now
-          colors={["#0daab4", "#53d7df", "#ffff"]}
+          colors={["#2c2d4d", "#a3a3d0", "#ffffff"]}
           start={{ x: 0, y: 0 }} // left
           end={{ x: 0, y: 1 }} // right
           style={{
@@ -92,21 +92,15 @@ const CartScreen = () => {
           >
             <Image
               style={{
-                height: hp(10),
-                width: wp(25),
+                height: hp(22),
+                width: wp(40),
                 resizeMode: "contain",
+                bottom : hp(5.5),
+                right : wp(1.7)
               }}
-              source={require("../assets/images/Amazon Logo.png")}
+              source={require("../assets/images/Quickart Logo.png")}
             />
-            <Text
-              style={{
-                fontFamily: "poppins-bold",
-                marginLeft: wp(1),
-                marginBottom: hp(0.7),
-              }}
-            >
-              Clone
-            </Text>
+            
           </View>
 
           <View

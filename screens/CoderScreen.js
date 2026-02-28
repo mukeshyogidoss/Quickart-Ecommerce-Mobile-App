@@ -25,8 +25,8 @@ const CoderScreen = () => {
           marginTop: hp(16.5),
           height: hp(71.7),
           width: wp(94),
-          backgroundColor: "#f8f8f8",
-          
+         
+          backgroundColor : '#ebebeb',
         }}
       >
         <Image
@@ -49,7 +49,7 @@ const CoderScreen = () => {
             fontFamily: "prompt-bold",
             fontSize: wp(4.3),
             letterSpacing: wp(0.32),
-            color: "#085690",
+            color: "#5e2f87",
             marginTop: hp(2.4),
             marginLeft: wp(3),
             marginBottom: hp(1.5),
@@ -82,7 +82,7 @@ const CoderScreen = () => {
           <Text style={styles.subText}>No:13/6, 27th Street,</Text>
           <Text style={styles.subText}>G.K.M.Colony,</Text>
           <Text style={styles.subText}>Chennai-600082.</Text>
-          <Text style={styles.subText}>Email : mukesh148y@gmail.com</Text>
+          <Text style={styles.subText}>Email : mukeshyogidoss@gmail.com</Text>
         </View>
 
         {/* Empty View Divider */}
@@ -108,7 +108,7 @@ const CoderScreen = () => {
 
           <View
             style={{
-              // backgroundColor: "#7db3fc",
+             
               width: wp(25),
             }}
           >
@@ -117,7 +117,7 @@ const CoderScreen = () => {
 
           <View
             style={{
-              // backgroundColor: "#ff7d63",
+             
               width: wp(39),
             }}
           >
@@ -143,7 +143,7 @@ const CoderScreen = () => {
               width: wp(24),
             }}
           >
-            <Text style={styles.headingValues}>Amazon Clone</Text>
+            <Text style={styles.headingValues}>Quickart Ecommerce</Text>
           </View>
 
           <View
@@ -152,9 +152,18 @@ const CoderScreen = () => {
               width: wp(25),
             }}
           >
+
+            {/* Old & Orginal One */}
+            {/*
             <Text style={[styles.headingValues]}>02/06/2025</Text>
             <Text style={[styles.headingValues]}>To</Text>
             <Text style={[styles.headingValues]}> 09/07/2025</Text>
+            */}
+
+            <Text style={[styles.headingValues]}>02/02/2026</Text>
+            <Text style={[styles.headingValues]}>To</Text>
+            <Text style={[styles.headingValues]}> 03/03/2026</Text>
+
           </View>
 
           <View
@@ -191,20 +200,22 @@ const CoderScreen = () => {
 
         <Image
           style={{
-            height: hp(3.8),
-            width: wp(33),
+           
             resizeMode: "contain",
-            zIndex: 1,
+           
             alignSelf: "center",
-            marginBottom: hp(1.6),
-
+            top : hp(45),
+            right : wp(31),
+            height : hp(15),
+            width : wp(33),
+            position :'absolute',
             // backgroundColor:'pink'
           }}
-          source={require("../assets/images/Amazon Logo.png")}
+          source={require("../assets/images/Quickart Logo.png")}
         />
 
         {/* Logos Section */}
-        <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop : hp(5.7) }}>
           {/* Instagram LInk QR */}
           <Pressable
             onPress={() =>

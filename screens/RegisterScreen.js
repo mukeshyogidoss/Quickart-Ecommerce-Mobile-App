@@ -26,6 +26,7 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const handleRegister = async () => {
+    console.log("Btn is working on RegisterScreen line no.29 ")
     const user = {
       name: name,
       email: email,
@@ -33,11 +34,21 @@ const LoginScreen = () => {
     };
 
     //send a post request to the Backend
+
+    // Alert.alert(
+    //   "Registration Success",
+    //   "You have Registered your Account",
+    //   [
+    //     {text:"OK", onPress: ()=>console.log("Registration is Done")}
+    //   ]
+    // )
+
+    // navigation.goBack();
     axios
       .post("https://e-commerce-backup.onrender.com/register", user)
       .then((response) => {
         console.log(response);
-        Alert.alert("Success!", "Registration successful");
+        Alert.alert("Success!", "Kindly Verify your Email");
 
         setName("");
         setEmail("");
@@ -53,14 +64,14 @@ const LoginScreen = () => {
   return (
     <View
       style={{
-        backgroundColor: "white",
+        backgroundColor: "#ececfdf9",
         height: hp(150),
         width: wp(100),
       }}
     >
       <Image
         style={styles.amazonLogo}
-        source={require("../assets/images/Amazon Logo.png")}
+        source={require("../assets/images/Quickart Logo.png")}
       />
 
       <Text
@@ -86,7 +97,7 @@ const LoginScreen = () => {
             justifyContent: "flex-start",
             alignSelf: "center",
             marginTop: hp(5),
-            backgroundColor: "#d0d0d0",
+            backgroundColor: "#c1c1d8f9",
             paddingVertical: 5,
             width: wp(87),
             gap: 10,
@@ -121,7 +132,7 @@ const LoginScreen = () => {
             justifyContent: "flex-start",
             alignSelf: "center",
             marginTop: hp(5),
-            backgroundColor: "#d0d0d0",
+            backgroundColor: "#c1c1d8f9",
             paddingVertical: 5,
             width: wp(87),
             gap: 10,
@@ -158,7 +169,7 @@ const LoginScreen = () => {
             alignSelf: "center",
             justifyContent: "center",
             marginTop: hp(5),
-            backgroundColor: "#d0d0d0",
+            backgroundColor: "#c1c1d8f9",
             paddingVertical: 5,
             width: wp(87),
             gap: 10,
@@ -216,11 +227,11 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   amazonLogo: {
-    width: wp(43),
+    width: wp(58),
     height: hp(40),
     resizeMode: "contain",
     alignSelf: "center",
-    marginLeft: wp(4),
+    marginRight : wp(5),
     marginTop: hp(-5),
   },
   input: {
@@ -234,13 +245,13 @@ const styles = StyleSheet.create({
     fontFamily: "outfit-regular",
   },
   loginButton: {
-    backgroundColor: "#f9bc50",
+    backgroundColor: "#585885f9",
     width: wp(55),
     height: hp(6),
     borderRadius: wp(1),
     justifyContent: "center",
     alignSelf: "center",
-    marginTop: hp(13),
+    marginTop: hp(11),
   },
   btnText: {
     fontFamily: "outfit-semiBold",

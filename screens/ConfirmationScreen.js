@@ -136,7 +136,7 @@ const ConfirmationScreen = () => {
       const options = {
         description: "Adding to the Wallet",
         currency: "INR",
-        name: "Amazon",
+        name: "Quickart",
         key: "rzp_test_34J10vzUmi3jU2",
         amount: total,
         prefill: {
@@ -144,7 +144,7 @@ const ConfirmationScreen = () => {
           contact: "9176872829",
           name: "Razor Pay",
         },
-        theme: { color: "#2dc0c6" },
+        theme: { color: "#543570" },
       };
 
       const data = await RazorpayCheckout.open(options);
@@ -159,9 +159,7 @@ const ConfirmationScreen = () => {
       };
       console.log("Order Data being sent:", orderData);
       const response = await axios.post(
-        "https://e-commerce-backup.onrender.com/orders",
-        orderData
-      );
+        "https://e-commerce-backup.onrender.com/orders",orderData);
 
       if (response.status == 200) {
         navigation.navigate("OrderScreen");
@@ -183,15 +181,15 @@ const ConfirmationScreen = () => {
       }}
     >
       <LinearGradient //It acts as a <View> now
-        colors={["#0daab4", "#92ecf1", "#ffff"]}
+        colors={["#282948", "#b4b4e5" ,"#fff"]}
         start={{ x: 0, y: 0 }} // left
         end={{ x: 0, y: 1 }} // right
         style={{
-          height: hp(6.5),
+          height: hp(7),
           flexDirection: "row",
           justifyContent: "center",
           gap: wp(2.5),
-          marginBottom: hp(2),
+          marginBottom: hp(3),
         }}
       />
       <View
@@ -453,7 +451,7 @@ const ConfirmationScreen = () => {
                             style={{
                               marginLeft: wp(4),
                               marginTop: hp(1),
-                              backgroundColor: "#0daab4",
+                              backgroundColor: "#58587d",
                               paddingVertical: hp(1.6),
                               alignItems: "center",
                               justifyContent: "center",

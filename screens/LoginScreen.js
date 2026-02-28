@@ -68,14 +68,14 @@ const LoginScreen = () => {
   return (
     <View
       style={{
-        backgroundColor: "white",
+        backgroundColor: "#ececfdf9",
         height: hp(150),
         width: wp(100),
       }}
     >
       <Image
         style={styles.amazonLogo}
-        source={require("../assets/images/Amazon Logo.png")}
+        source={require("../assets/images/Quickart Logo.png")}
       />
 
       <Text
@@ -101,7 +101,7 @@ const LoginScreen = () => {
             justifyContent: "flex-start",
             alignSelf: "center",
             marginTop: hp(5),
-            backgroundColor: "#d0d0d0",
+            backgroundColor: "#c1c1d8f9",
             paddingVertical: 5,
             width: wp(87),
             gap: 10,
@@ -138,7 +138,7 @@ const LoginScreen = () => {
             alignSelf: "center",
             justifyContent: "center",
             marginTop: hp(5),
-            backgroundColor: "#d0d0d0",
+            backgroundColor: "#c1c1d8f9",
             paddingVertical: 5,
             width: wp(87),
             gap: 10,
@@ -195,7 +195,7 @@ const LoginScreen = () => {
         onPress={() => navigation.navigate("RegisterScreen")}
         style={{
           flexDirection: "row",
-          // backgroundColor:'#f043',
+        
           marginHorizontal: wp(7),
           gap: 2,
           marginTop: hp(3),
@@ -203,7 +203,7 @@ const LoginScreen = () => {
           alignItems: "center",
         }}
       >
-        <Text style={[styles.text, { color: "#5f5f5f" }]}>New to {""} Amazon?</Text>
+        <Text style={[styles.text, { color: "#5f5f5f" }]}>New to {""} Quickart?</Text>
         <Text style={[styles.text, { color: "black" }]}>Create an{" "} account</Text>
       </TouchableOpacity>
     </View>
@@ -214,11 +214,11 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   amazonLogo: {
-    width: wp(43),
+    width: wp(58),
     height: hp(40),
     resizeMode: "contain",
     alignSelf: "center",
-    marginLeft: wp(4),
+    marginRight : wp(4),
     marginTop: hp(-5),
   },
   input: {
@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
     marginLeft:wp(2)
   },
   loginButton: {
-    backgroundColor: "#f9bc50",
+    backgroundColor: "#585885f9",
     width: wp(55),
     height: hp(6),
     borderRadius: wp(1),

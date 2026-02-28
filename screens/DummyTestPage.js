@@ -27,7 +27,7 @@ const DummyTestPage = () => {
       ]}
     >
       <LinearGradient
-        colors={["#e0e0e0", "#f3f3f3", "white"]}
+        colors={["#c0c0dfc5", "rgba(134, 103, 157, 0)"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
         style={styles.bottomBar}
@@ -36,7 +36,7 @@ const DummyTestPage = () => {
           onPress={() => navigation.replace("HomeScreen")}
           style={styles.iconWrapper}
         >
-          <Ionicons name="home" size={22} color="#2a2a2a" />
+          <Ionicons name="home" size={20} color="#303030" />
           <Text style={styles.headings}>Home{" "}  </Text>
         </Pressable>
 
@@ -44,7 +44,7 @@ const DummyTestPage = () => {
           onPress={() => navigation.replace("ProfileScreen")}
           style={styles.iconWrapper}
         >
-          <FontAwesome5 name="user-alt" size={20} color="#2a2a2a" />
+          <FontAwesome5 name="user-alt" size={18} color="#303030" />
           <Text style={styles.headings}>Profile{" "} </Text>
         </Pressable>
 
@@ -52,7 +52,7 @@ const DummyTestPage = () => {
           onPress={() => navigation.replace("CartScreen")}
           style={styles.iconWrapper}
         >
-          <Ionicons name="cart-sharp" size={25} color="#2a2a2a" />
+          <Ionicons name="cart-sharp" size={23} color="#303030" />
           <Text style={styles.headings}>Cart{" "} </Text>
         </Pressable>
       </LinearGradient>
@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
   },
   headings:{
     fontFamily:'amazon-regular',
-    fontSize:wp(3.5)
+    fontSize:wp(3.5),
+    marginLeft : wp(2),
+    color : '#222222'
   }
 });
