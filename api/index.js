@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const crypto = require("crypto");
 const nodeMailer = require("nodemailer");
 
+
+import transporter from "./nodemailer";
+
 require("dotenv").config();
 
 const app = express();
@@ -45,8 +48,9 @@ const Order = require("./models/order");
 
 
 
+
 app.post("/register", async (req, res) => {
-  console.log("/register is working at index.js line no 49");
+  console.log("//register is working at index.js line no 49");
 
   try {
     const { name, email, password } = req.body;
@@ -54,7 +58,7 @@ app.post("/register", async (req, res) => {
     const existingUser = await User.findOne({ email });
     // Check if user already exists
     if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message123: "User already exists123" });
     }
 
     // Create a new user
@@ -78,16 +82,7 @@ app.post("/register", async (req, res) => {
 const sendVerificationEmail = async (email, verificationToken) => {
   console.log("Email function is called after clicking register : ", email , verificationToken)
   // Create a NodeMailer transporter
-  const transporter = nodeMailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "mukeshcrypto60@gmail.com",
-      pass: "pexp oagd wjyx pjau",
-    },
-    tls: {
-      rejectUnauthorized: false, // ⚠️ This disables SSL certificate checks
-    },
-  });
+ 
 
   //Compose the email
   const mailOptions = {
