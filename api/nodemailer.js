@@ -1,8 +1,8 @@
-const nodeMailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 
 
-const transporter = nodeMailer.createTransport({
+const transporter = nodemailer.createTransport({
     host: "smtp-relay.brevo.com",
     port : 587,
     secure : false,
