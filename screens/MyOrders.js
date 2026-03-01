@@ -61,7 +61,7 @@ const MyOrders = () => {
       <ScrollView>
       {/* Past Orders */}
       <LinearGradient //It acts as a <View> now
-        colors={["#01575c", "#2dc0c6", "#fff"]}
+        colors={["#2c2d4d", "#b4b4e5", "#fff"]}
         start={{ x: 0, y: 0 }} // left
         end={{ x: 0, y: 1 }} // right
         style={{
@@ -82,21 +82,15 @@ const MyOrders = () => {
         >
           <Image
             style={{
-              height: hp(10),
-              width: wp(25),
+              height: hp(16),
+              width: wp(60),
+              bottom : hp(3),
+              right : wp(1),
               resizeMode: "contain",
             }}
-            source={require("../assets/images/Amazon Logo.png")}
+            source={require("../assets/images/Quickart Logo.png")}
           />
-          <Text
-            style={{
-              fontFamily: "poppins-bold",
-              marginLeft: wp(1),
-              marginBottom: hp(0.7),
-            }}
-          >
-            Clone
-          </Text>
+          
         </View>
 
         <View

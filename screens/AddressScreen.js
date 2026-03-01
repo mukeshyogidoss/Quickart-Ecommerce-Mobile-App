@@ -105,7 +105,7 @@ const AddressScreen = () => {
       }}
     >
       <LinearGradient //It acts as a <View> now
-        colors={["#0daab4", "#92ecf1", "#ffff"]}
+        colors={["#2c2d4d", "#b4b4e5", "#ffff"]}
         start={{ x: 0, y: 0 }} // left
         end={{ x: 0, y: 1 }} // right
         style={{
@@ -206,7 +206,7 @@ const AddressScreen = () => {
         onPress={handleAddAddress}
         style={{
           alignItems: "center",
-          backgroundColor: "#fadc03",
+          backgroundColor: "#4d4e78",
           paddingVertical: hp(2),
           marginHorizontal: wp(3.7),
           borderRadius: wp(2),
@@ -216,6 +216,7 @@ const AddressScreen = () => {
         <Text
           style={{
             fontFamily: "amazon-regular",
+            color : '#fff'
           }}
         >
           Add Adderess

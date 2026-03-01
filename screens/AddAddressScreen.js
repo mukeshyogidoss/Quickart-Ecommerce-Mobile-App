@@ -111,7 +111,7 @@ const AddAddressScreen = () => {
       <ScrollView>
         <View>
           <LinearGradient //Ut acts as a <View> now
-            colors={["#0daab4", "#53d7df", "#ffff"]}
+            colors={["#2c2d4d", "#b4b4e5", "#ffff"]}
             start={{ x: 0, y: 0 }} // left
             end={{ x: 0, y: 1 }} // right
             style={{
@@ -132,22 +132,15 @@ const AddAddressScreen = () => {
             >
               <Image
                 style={{
-                  height: hp(10),
-                  width: wp(20),
+                  height: hp(16),
+                  width: wp(60),
+                  bottom : hp(3),
+                  right : wp(1),
                   resizeMode: "contain",
                 }}
-                source={require("../assets/images/Amazon Logo.png")}
+                source={require("../assets/images/Quickart Logo.png")}
               />
-              <Text
-                style={{
-                  fontFamily: "poppins-bold",
-                  marginLeft: wp(1),
-                  marginBottom: hp(0.7),
-                  fontSize: wp(3),
-                }}
-              >
-                Clone
-              </Text>
+             
             </View>
 
             <View

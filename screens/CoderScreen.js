@@ -26,7 +26,7 @@ const CoderScreen = () => {
           height: hp(71.7),
           width: wp(94),
          
-          backgroundColor : '#ebebeb',
+          backgroundColor : '#f2f2f2',
         }}
       >
         <Image
@@ -162,7 +162,7 @@ const CoderScreen = () => {
 
             <Text style={[styles.headingValues]}>02/02/2026</Text>
             <Text style={[styles.headingValues]}>To</Text>
-            <Text style={[styles.headingValues]}> 03/03/2026</Text>
+            <Text style={[styles.headingValues]}> 01/03/2026</Text>
 
           </View>
 

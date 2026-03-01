@@ -3,10 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 
-
-const transporter = require("./nodemailer");
-
- 
+const nodeMailer = require("nodemailer");
 
 require("dotenv").config();
 
@@ -49,9 +46,8 @@ const Order = require("./models/order");
 
 
 
-
 app.post("/register", async (req, res) => {
-  console.log("//register is working at index.js line no 49");
+  console.log("/register is working at index.js line no 49");
 
   try {
     const { name, email, password } = req.body;
@@ -59,7 +55,7 @@ app.post("/register", async (req, res) => {
     const existingUser = await User.findOne({ email });
     // Check if user already exists
     if (existingUser) {
-      return res.status(400).json({ message123: "User already exists123" });
+      return res.status(400).json({ message: "User already exists" });
     }
 
     // Create a new user
@@ -83,11 +79,20 @@ app.post("/register", async (req, res) => {
 const sendVerificationEmail = async (email, verificationToken) => {
   console.log("Email function is called after clicking register : ", email , verificationToken)
   // Create a NodeMailer transporter
- 
+  const transporter = nodeMailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+    tls: {
+      rejectUnauthorized: false, // ⚠️ This disables SSL certificate checks
+    },
+  });
 
   //Compose the email
   const mailOptions = {
-    from: "mukeshcrypto60@gmail.com",
+    from: "quickart.ecomm@gmail.com",
     to: email,
     subject: "Email Verification",
     text: `Please verify your email by clicking on the following link: https://e-commerce-backup.onrender.com/verify/${verificationToken}`,

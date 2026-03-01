@@ -27,6 +27,7 @@ const LoginScreen = () => {
 
   const handleRegister = async () => {
     console.log("Btn is working on RegisterScreen line no.29 ")
+
     const user = {
       name: name,
       email: email,
@@ -35,15 +36,15 @@ const LoginScreen = () => {
 
     //send a post request to the Backend
 
-    // Alert.alert(
-    //   "Registration Success",
-    //   "You have Registered your Account",
-    //   [
-    //     {text:"OK", onPress: ()=>console.log("Registration is Done")}
-    //   ]
-    // )
+    Alert.alert(
+      "Registration Success",
+      "You have Registered your Account",
+      [
+        {text:"OK", onPress: ()=>console.log("Registration is Done")}
+      ]
+    )
 
-    // navigation.goBack();
+   
     axios
       .post("https://e-commerce-backup.onrender.com/register", user)
       .then((response) => {
@@ -58,6 +59,7 @@ const LoginScreen = () => {
         console.log("error123 : ",error);
         Alert.alert("Error!", error.response?.data?.message || "Registration failed");
       });
+       navigation.goBack();
   };
 
   

@@ -1,4 +1,6 @@
 import Entypo from "@expo/vector-icons/Entypo";
+import Feather from '@expo/vector-icons/Feather';
+
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
@@ -73,10 +75,31 @@ const LoginScreen = () => {
         width: wp(100),
       }}
     >
+      {/* For my safety purspoe in case of failed */}
+       <TouchableOpacity onPress={()=>navigation.replace("HomeScreen")}
+        style={{
+          // backgroundColor :'#7d7d7d28',
+          // width : wp(10),
+          // height : hp(5),
+          padding : 10,
+          position : 'absolute',
+          left : wp(82),
+          top : hp(5),
+          justifyContent : 'center',
+          alignItems : 'center'
+       }}> 
+        <Feather style={{
+         
+          
+     }} name="arrow-right" size={24} color="#58588518" />
+       </TouchableOpacity>
+
       <Image
         style={styles.amazonLogo}
         source={require("../assets/images/Quickart Logo.png")}
       />
+
+    
 
       <Text
         style={{
@@ -203,8 +226,8 @@ const LoginScreen = () => {
           alignItems: "center",
         }}
       >
-        <Text style={[styles.text, { color: "#5f5f5f" }]}>New to {""} Quickart?</Text>
-        <Text style={[styles.text, { color: "black" }]}>Create an{" "} account</Text>
+        <Text style={[styles.text, { color: "#5f5f5f" }]}>New to Quickart?</Text>
+        <Text style={[styles.text, { color: "black" }]}>Create an account</Text>
       </TouchableOpacity>
     </View>
   );
